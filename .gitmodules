@@ -1,0 +1,6 @@
+[submodule "deps/openh264"]
+	path = deps/openh264
+	url = https://github.com/cisco/openh264.git
+[submodule "deps/openssl"]
+	path = deps/openssl
+	url = https://github.com/openssl/openssl.git
