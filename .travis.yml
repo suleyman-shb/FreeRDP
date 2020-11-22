@@ -9,11 +9,14 @@ matrix:
 
   - name: "MSVC on Windows"
     os: windows
+    install:
+      - choco install -y meson
+      - choco install -y nasm # installs cmake as dep
+      #- choco install -y cmake
+      - choco install -y activeperl
     script:
-    - choco install meson -y
-    - choco install nasm -y # installs cmake as dep
-    #- choco install cmake -y
-    - choco install activeperl -y
-    #- Update-SessionEnvironment
-
     - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && build-win.bat'
+
+cache:
+  - directories:
+      - deps
