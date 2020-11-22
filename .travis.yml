@@ -14,6 +14,6 @@ matrix:
     - choco install nasm -y # installs cmake as dep
     #- choco install cmake -y
     - choco install activeperl -y
-    - Update-SessionEnvironment
+    #- Update-SessionEnvironment
 
     - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && build-win.bat'
