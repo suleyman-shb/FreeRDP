@@ -14,11 +14,13 @@ matrix:
       - choco install -y nasm # installs cmake as dep
       #- choco install -y cmake
       - choco install -y activeperl
+      - cmd /C RefreshEnv.cmd
     script:
-    - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && build-openh264.bat'
-    - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && build-openssl.bat'
-    - cmd.exe /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && build-win.bat'
+    - cmd /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && build-openh264.bat'
+    - cmd /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && build-openssl.bat'
+    - cmd /C '"C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" amd64 && build-win.bat'
 
 cache:
   - directories:
       - deps
+      - $HOME/AppData/Local/Temp/chocolatey
