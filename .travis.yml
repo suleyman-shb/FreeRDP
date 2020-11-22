@@ -2,7 +2,7 @@ dist: trusty
 
 os: windows
 
-language: shell
+language: bash
 
 matrix:
   include:
@@ -24,3 +24,7 @@ cache:
   - directories:
       - deps
       - $HOME/AppData/Local/Temp/chocolatey
+
+addons:
+  artifacts:
+    working_dir: ./install
